@@ -8,8 +8,9 @@ Why? ML models are designed for multiple features. Even if there is one feature,
 
 X = df[['Weight']]   # ✅ 2D DataFrame
 y = df['Height']     # ✅ 1D Series
-
-
+---
+IMPORTANT: Always use 2D arr /DF for Independent features annd 1D is ok for output/dependent
+---
 ❌ Using df['Weight'] as X breaks consistency.
 Mental rule: One sample = one row, one feature = one column → always 2D.
 
