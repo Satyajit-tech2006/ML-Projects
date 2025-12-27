@@ -47,8 +47,6 @@ ParameterReminderpenaltyType of regularization (l1, l2, elasticnet)CInverse of r
 5️⃣ Parameter Grid (Most Important Step)
 ----------------------------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   params = {      'penalty': ['l1', 'l2'],      'C': [100, 10, 1, 0.1, 0.01],      'solver': ['liblinear', 'saga']  }   `
-
 📌 **Keys must EXACTLY match model parameter names**
 
 6️⃣ Why Not Any Solver With Any Penalty?
@@ -74,7 +72,6 @@ Some combinations are **invalid**
 8️⃣ Stratified K-Fold (Very Important)
 --------------------------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   from sklearn.model_selection import StratifiedKFold  cv = StratifiedKFold(n_splits=5)   `
 
 Why stratified?
 
@@ -86,7 +83,6 @@ Why stratified?
 9️⃣ Creating GridSearchCV Object
 --------------------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   from sklearn.model_selection import GridSearchCV  grid = GridSearchCV(      estimator=model,      param_grid=params,      scoring='accuracy',      cv=cv,      n_jobs=-1  )   `
 
 ### What Each Argument Means
 
@@ -95,7 +91,6 @@ ArgumentMeaningestimatorModel to tuneparam\_gridParameters to tryscoringMetric t
 🔟 Training Grid Search
 -----------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   grid.fit(X_train, y_train)   `
 
 What happens internally:
 
@@ -111,14 +106,11 @@ What happens internally:
 1️⃣1️⃣ Getting Best Parameters & Score
 --------------------------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   grid.best_params_  grid.best_score_   `
 
 📌 best\_score\_ → CV score (not test score)
 
 1️⃣2️⃣ Making Predictions with Best Model
 -----------------------------------------
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   y_pred = grid.predict(X_test)   `
 
 📌 Uses **best\_estimator\_ internally**
 
