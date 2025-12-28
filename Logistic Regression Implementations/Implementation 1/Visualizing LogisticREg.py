@@ -1,7 +1,4 @@
-# ----------------------------------------------------
-# Logistic Regression – Complete Visual Understanding
-# ----------------------------------------------------
-
+#Chatgpt code 
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
