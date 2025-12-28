@@ -1,4 +1,15 @@
 #Chatgpt code 
+"""
+EXPERIMENTAL / LEARNING FILE
+
+Purpose:
+- Visual intuition for Logistic Regression
+- Decision boundary understanding
+- Probability behavior visualization
+
+Not meant for production use.
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
